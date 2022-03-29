@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class DetailPage extends StatefulWidget {
-  String sender, title, messeage, send_to;
+class DetailPageDocument extends StatefulWidget {
+  String Subject, SubjectTitle, Detail, Lecturers;
 
-  DetailPage(
-      {required this.sender,
-      required this.title,
-      required this.messeage,
-      required this.send_to});
+  DetailPageDocument(
+      {required this.Subject,
+      required this.SubjectTitle,
+      required this.Detail,
+      required this.Lecturers});
   @override
-  _DetailPageState createState() => _DetailPageState();
+  _DetailPageDocumentState createState() => _DetailPageDocumentState();
 }
 
-class _DetailPageState extends State<DetailPage> {
+class _DetailPageDocumentState extends State<DetailPageDocument> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -47,10 +47,10 @@ class _DetailPageState extends State<DetailPage> {
                         size: 50,
                       ),
                     ),
-                    buildText(text: 'sender : ${widget.sender}'),
-                    buildText(text: 'title : ${widget.title}'),
-                    buildText(text: 'messeage : ' + widget.messeage),
-                    buildText(text: 'send_to : ' + widget.send_to),
+                    buildText(text: 'Subject : ${widget.Subject}'),
+                    buildText(text: 'SubjectTitle : ${widget.SubjectTitle}'),
+                    buildText(text: 'Detail : ' + widget.Detail),
+                    buildText(text: 'Lecturers : ' + widget.Lecturers),
                   ]),
             ),
           ),

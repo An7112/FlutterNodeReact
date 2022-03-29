@@ -6,7 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./DB.js');
 const notificationsRoute = require('./notification.route');
-
+const documentsRoute = require('./document.route');
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
     () => {console.log('Database is connected') },
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use('/notifications', notificationsRoute);
-
+app.use('/documents', documentsRoute);
 
 app.listen(PORT, function(){
     console.log('Server is running on Port:',PORT);
