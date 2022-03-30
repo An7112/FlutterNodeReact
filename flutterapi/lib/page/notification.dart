@@ -16,40 +16,6 @@ class _NotificationPageState extends State<NotificationPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: Theme(
-          //trong suoots
-          data: Theme.of(context).copyWith(
-            // Set the transparency here
-            canvasColor: Colors
-                .transparent, //or any other color you want. e.g Colors.blue.withOpacity(0.5)
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(20),
-              bottomRight: Radius.circular(20),
-            ),
-            child: Drawer(
-              child: Container(
-                // color: Colors.transparent,
-                child: SingleChildScrollView(
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      border: Border(
-                        right: BorderSide(width: 1.0, color: Colors.white),
-                      ),
-                    ),
-                    child: Column(
-                      children: [
-                        MyHeaderDrawer(),
-                        MyDrawerList(),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
         appBar: AppBar(
           title: Text(appname),
           centerTitle: true,
@@ -68,24 +34,6 @@ class _NotificationPageState extends State<NotificationPage> {
             return buildListView(data!, context);
           },
         ),
-      ),
-    );
-  }
-
-  Widget MyDrawerList() {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      color: Colors.black.withOpacity(0.4),
-      padding: EdgeInsets.only(
-        top: 15,
-      ),
-      child: Column(
-        children: [
-          // AboutItem(),
-          // SaveItem(),
-          // LogoutItem(),
-        ],
       ),
     );
   }

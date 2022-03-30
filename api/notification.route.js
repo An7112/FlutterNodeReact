@@ -47,6 +47,8 @@ notificationRoutes.route('/update/:id').post(function (req, res) {
             notification.title = req.body.title;
             notification.messeage = req.body.messeage;
             notification.send_to = req.body.send_to;
+            notification.email = req.body.email;
+            notification.pass = req.body.pass;
 
             notification.save().then(business => {
                 res.json('Update complete');

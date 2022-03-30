@@ -48,7 +48,7 @@ class _DetailPageDocumentState extends State<DetailPageDocument> {
                       ),
                     ),
                     buildText(text: 'Subject : ${widget.Subject}'),
-                    buildText(text: 'SubjectTitle : ${widget.SubjectTitle}'),
+                    buildText(text: 'Subject Title : ${widget.SubjectTitle}'),
                     buildText(text: 'Detail : ' + widget.Detail),
                     buildText(text: 'Lecturers : ' + widget.Lecturers),
                   ]),

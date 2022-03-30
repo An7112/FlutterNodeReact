@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapi/model/data_model.dart';
 import 'package:flutterapi/model/data_model_document.dart';
 import 'package:flutterapi/page/detailPageDocument.dart';
 import 'package:flutterapi/service/data_service_document.dart';
@@ -12,45 +11,11 @@ class DocumentPage extends StatefulWidget {
 
 class _DocumentPageState extends State<DocumentPage> {
   DataServiceDocument dataServiceDocument = DataServiceDocument();
-  String appname = 'Node_Flutter';
+  String appname = 'Flutter Api';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: Theme(
-          //trong suoots
-          data: Theme.of(context).copyWith(
-            // Set the transparency here
-            canvasColor: Colors
-                .transparent, //or any other color you want. e.g Colors.blue.withOpacity(0.5)
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(20),
-              bottomRight: Radius.circular(20),
-            ),
-            child: Drawer(
-              child: Container(
-                // color: Colors.transparent,
-                child: SingleChildScrollView(
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      border: Border(
-                        right: BorderSide(width: 1.0, color: Colors.white),
-                      ),
-                    ),
-                    child: Column(
-                      children: [
-                        MyHeaderDrawer(),
-                        MyDrawerList(),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
         appBar: AppBar(
           title: Text(appname),
           centerTitle: true,
@@ -69,24 +34,6 @@ class _DocumentPageState extends State<DocumentPage> {
             return buildListView(data!, context);
           },
         ),
-      ),
-    );
-  }
-
-  Widget MyDrawerList() {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      color: Colors.black.withOpacity(0.4),
-      padding: EdgeInsets.only(
-        top: 15,
-      ),
-      child: Column(
-        children: [
-          // AboutItem(),
-          // SaveItem(),
-          // LogoutItem(),
-        ],
       ),
     );
   }
@@ -119,7 +66,7 @@ class _DocumentPageState extends State<DocumentPage> {
                               Lecturers: data[index].Lecturers,
                             )));
               },
-              leading: Icon(Icons.local_fire_department_sharp),
+              leading: Icon(Icons.amp_stories_outlined),
               title: Text('${data[index].Subject} '),
               subtitle: Text('${data[index].SubjectTitle}'),
               trailing: Text('${data[index].Lecturers}'),
