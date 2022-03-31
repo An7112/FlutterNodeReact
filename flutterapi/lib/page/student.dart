@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapi/model/data_model_document.dart';
-import 'package:flutterapi/page/detailPageDocument.dart';
-import 'package:flutterapi/service/data_service_document.dart';
-import 'mydrawerheader.dart';
+import 'package:flutterapi/model/data_model_student.dart';
+import 'package:flutterapi/page/detailPageStudent.dart';
+import 'package:flutterapi/service/data_service_student.dart';
+// import 'mydrawerheader.dart';
 
-class DocumentPage extends StatefulWidget {
+class StudentPage extends StatefulWidget {
   @override
-  _DocumentPageState createState() => _DocumentPageState();
+  _StudentPageState createState() => _StudentPageState();
 }
 
-class _DocumentPageState extends State<DocumentPage> {
-  DataServiceDocument dataServiceDocument = DataServiceDocument();
+class _StudentPageState extends State<StudentPage> {
+  DataServiceStudent dataServiceStudent = DataServiceStudent();
   String appname = 'Flutter Api';
   @override
   Widget build(BuildContext context) {
@@ -22,9 +22,9 @@ class _DocumentPageState extends State<DocumentPage> {
           elevation: 0.0,
         ),
         body: FutureBuilder(
-          future: dataServiceDocument.getDataDocument(),
+          future: dataServiceStudent.getDataStudent(),
           builder: (_, snapshot) {
-            List<DataDocument>? data = snapshot.data as List<DataDocument>?;
+            List<DataStudent>? data = snapshot.data as List<DataStudent>?;
             if (!snapshot.hasData) {
               return Center(
                   child: CircularProgressIndicator(
@@ -46,7 +46,7 @@ class _DocumentPageState extends State<DocumentPage> {
     );
   }
 
-  Widget buildListView(List<DataDocument> data, BuildContext context) {
+  Widget buildListView(List<DataStudent> data, BuildContext context) {
     return ListView.builder(
       physics: BouncingScrollPhysics(),
       itemCount: data.length,
@@ -59,19 +59,22 @@ class _DocumentPageState extends State<DocumentPage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (_) => DetailPageDocument(
-                              Subject: data[index].Subject,
-                              SubjectTitle: data[index].SubjectTitle,
-                              Detail: data[index].Detail,
-                              Lecturers: data[index].Lecturers,
+                        builder: (_) => DetailPageStudent(
+                              Name: data[index].Name,
+                              Uid: data[index].Uid,
+                              City: data[index].City,
+                              ZipCode: data[index].ZipCode,
+                              PhoneNumber: data[index].PhoneNumber,
+                              ClassA: data[index].ClassA,
+                              CitizenID: data[index].CitizenID,
                             )));
               },
               leading: Icon(Icons.amp_stories_outlined),
               title: Text(
-                '${data[index].Subject}',
+                '${data[index].Name}',
               ),
-              subtitle: Text('${data[index].SubjectTitle}'),
-              trailing: Text('${data[index].Lecturers}'),
+              subtitle: Text('${data[index].Uid}'),
+              trailing: Text('${data[index].ClassA}'),
             ),
           ),
         );

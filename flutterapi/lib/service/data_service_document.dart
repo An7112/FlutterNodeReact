@@ -2,9 +2,8 @@ import 'dart:convert';
 import 'package:flutterapi/model/data_model_document.dart';
 import 'package:http/http.dart' as http;
 
-// import 'package:dio/dio.dart';
 class DataServiceDocument {
-  String url = "http://192.168.10.30:60444/documents";
+  String url = "http://172.20.10.4:60444/documents";
   late List<DataDocument> data;
   List insideDataDocument = [];
 

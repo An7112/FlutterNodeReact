@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapi/page/student.dart';
 import 'notification.dart';
 import 'document.dart';
 import 'mydrawerheader.dart';
@@ -74,7 +75,7 @@ class _HomeState extends State<Home> {
                 width: 400,
                 child: ClipRRect(
                   child: Image(
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                     image: AssetImage('images/donga.jpg'),
                   ),
                 ),
@@ -116,6 +117,26 @@ class _HomeState extends State<Home> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => DocumentPage()),
+                    );
+                  },
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.only(
+                left: 10,
+                right: 10,
+              ),
+              child: SizedBox(
+                height: 100,
+                width: 380,
+                child: ElevatedButton(
+                  child: const Text('Thông tin sinh viên'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StudentPage()),
                     );
                   },
                 ),

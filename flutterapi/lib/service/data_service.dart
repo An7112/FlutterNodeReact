@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 // import 'package:dio/dio.dart';
 class DataService {
-  String url = "http://192.168.10.30:60444/notifications";
+  String url = "http://172.20.10.4:60444/notifications";
   late List<Data> data;
   List insideData = [];
 

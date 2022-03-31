@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class DetailPageDocument extends StatefulWidget {
-  String Subject, SubjectTitle, Detail, Lecturers;
+class DetailPageStudent extends StatefulWidget {
+  String Name, Uid, City, ZipCode, PhoneNumber, ClassA, CitizenID;
 
-  DetailPageDocument(
-      {required this.Subject,
-      required this.SubjectTitle,
-      required this.Detail,
-      required this.Lecturers});
+  DetailPageStudent({
+    required this.Name,
+    required this.Uid,
+    required this.City,
+    required this.ZipCode,
+    required this.PhoneNumber,
+    required this.ClassA,
+    required this.CitizenID,
+  });
   @override
-  _DetailPageDocumentState createState() => _DetailPageDocumentState();
+  _DetailPageStudentState createState() => _DetailPageStudentState();
 }
 
-class _DetailPageDocumentState extends State<DetailPageDocument> {
+class _DetailPageStudentState extends State<DetailPageStudent> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -47,16 +51,16 @@ class _DetailPageDocumentState extends State<DetailPageDocument> {
                         size: 50,
                       ),
                     ),
-                    buildText(text: '${widget.Subject}'),
+                    buildText(text: '${widget.Name}'),
                     SizedBox(height: 5),
-                    buildText(text: '${widget.SubjectTitle}'),
+                    buildText(text: '${widget.Uid}'),
                     SizedBox(height: 40),
-                    buildText(
-                        text: '${widget.SubjectTitle}: ' +
-                            '' +
-                            '${widget.Detail}'),
+                    buildText(text: '${widget.Uid}: ' + '' + '${widget.City}'),
                     SizedBox(height: 10),
-                    buildText(text: 'Lecturers : ' + widget.Lecturers),
+                    buildText(text: 'Zip Code : ' + widget.ZipCode),
+                    buildText(text: '${widget.PhoneNumber}'),
+                    buildText(text: '${widget.ClassA}'),
+                    buildText(text: '${widget.CitizenID}'),
                   ]),
             ),
           ),

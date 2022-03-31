@@ -15,13 +15,7 @@ let Notifications = new Schema({
     send_to: {
         type: String
     },
-    email:{
-        type: String
-    },
-    pass:{
-        type: String
 
-    }
 }, {
     collection: 'notifications'
 });

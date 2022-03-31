@@ -7,6 +7,9 @@ import Edit from './edit.component';
 import CreateDocument from './create.document';
 import IndexDocument from './index.document';
 import EditDocument from './edit.document';
+import CreateStudent from './create.student';
+import EditStudent from './edit.student';
+import IndexStudent from './index.student';
 class Notifications extends Component {
     render () {
         return (
@@ -19,13 +22,19 @@ class Notifications extends Component {
                                     <Link to={'/createDocument'} className="nav-link">Create Document</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/indexDocument'} className="nav-link">Index Document</Link>
+                                    <Link to={'/indexDocument'} className="nav-link">Document</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to={'/index'} className="nav-link">Index</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to={'/create'} className="nav-link">Create</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link to={'/createStudent'} className="nav-link">Create Student</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link to={'/indexStudent'} className="nav-link">Student</Link>
                                 </li>
                             </ul>
                         </div>
@@ -36,8 +45,12 @@ class Notifications extends Component {
                         <Route path='/edit/:id' component={ Edit }/>
                         <Route path='/index' component={ Index }/>
                         <Route exact path='/createDocument' component={ CreateDocument } />
-                        <Route path='/editDocument/:id' component={ EditDocument }/>
+                        <Route path='/editdocument/:id' component={ EditDocument }/>
                         <Route path='/indexDocument' component={ IndexDocument}/>
+
+                        <Route exact path='/createStudent' component={ CreateStudent } />
+                        <Route path='/editstudent/:id' component={ EditStudent }/>
+                        <Route path='/indexStudent' component={ IndexStudent}/>
                     </Switch>
                 </div>
             </Router>
