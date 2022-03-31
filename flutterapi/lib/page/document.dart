@@ -11,13 +11,13 @@ class DocumentPage extends StatefulWidget {
 
 class _DocumentPageState extends State<DocumentPage> {
   DataServiceDocument dataServiceDocument = DataServiceDocument();
-  String appname = 'Flutter Api';
+  String pagename = 'Khóa học';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(appname),
+          title: Text(pagename),
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -40,7 +40,7 @@ class _DocumentPageState extends State<DocumentPage> {
 
   Widget buildAppBar() {
     return AppBar(
-      title: Text(appname),
+      title: Text(pagename),
       centerTitle: true,
       elevation: 0.0,
     );

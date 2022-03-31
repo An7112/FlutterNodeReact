@@ -14,17 +14,20 @@ class DetailPageDocument extends StatefulWidget {
 }
 
 class _DetailPageDocumentState extends State<DetailPageDocument> {
+  String pagename = 'Chi tiết khóa học';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          title: Text(pagename),
           leading: IconButton(
             icon: Icon(Icons.clear),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
+          centerTitle: true,
         ),
         body: Center(
           child: Card(
@@ -43,8 +46,8 @@ class _DetailPageDocumentState extends State<DetailPageDocument> {
                   children: [
                     Center(
                       child: Icon(
-                        Icons.person,
-                        size: 50,
+                        Icons.book_outlined,
+                        size: 20,
                       ),
                     ),
                     buildText(text: '${widget.Subject}'),

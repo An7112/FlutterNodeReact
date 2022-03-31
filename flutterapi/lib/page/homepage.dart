@@ -3,7 +3,6 @@ import 'package:flutterapi/page/student.dart';
 import 'notification.dart';
 import 'document.dart';
 import 'mydrawerheader.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -53,17 +52,12 @@ class _HomeState extends State<Home> {
         ),
       ),
       appBar: AppBar(
-        title: const Text("ListView"),
+        title: const Text("Đại Học Đông Á"),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            // Container(
-            //   height: 100,
-            //   child: ListView(
-            //     scrollDirection: Axis.horizontal,
-            //     children: [
             Container(
               padding: const EdgeInsets.only(
                 top: 10,
@@ -161,10 +155,130 @@ class _HomeState extends State<Home> {
       ),
       child: Column(
         children: [
-          // AboutItem(),
-          // SaveItem(),
-          // LogoutItem(),
+          ThongBao(),
+          KhoaHoc(),
+          ThongTinSinhVien(),
         ],
+      ),
+    );
+  }
+
+  Widget ThongBao() {
+    return Material(
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => NotificationPage(),
+            ),
+          );
+        },
+        child: Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: Icon(
+                  Icons.account_balance,
+                  size: 20,
+                  color: Colors.white,
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Text(
+                  "Thông Báo",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'Lato',
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget KhoaHoc() {
+    return Material(
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DocumentPage(),
+            ),
+          );
+        },
+        child: Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: Icon(
+                  Icons.bookmark_add_outlined,
+                  size: 20,
+                  color: Colors.white,
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Text(
+                  "Khóa học",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'Lato',
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget ThongTinSinhVien() {
+    return Material(
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => StudentPage(),
+            ),
+          );
+        },
+        child: Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: Icon(
+                  Icons.wrap_text,
+                  size: 20,
+                  color: Colors.white,
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Text(
+                  "Thông tin sinh viên",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'Lato',
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

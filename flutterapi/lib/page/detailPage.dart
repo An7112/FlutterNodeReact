@@ -14,17 +14,20 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  String pagename = 'Chi tiết thông báo';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          title: Text(pagename),
           leading: IconButton(
             icon: Icon(Icons.clear),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
+          centerTitle: true,
         ),
         body: Center(
           child: Card(
@@ -43,8 +46,8 @@ class _DetailPageState extends State<DetailPage> {
                   children: [
                     Center(
                       child: Icon(
-                        Icons.person,
-                        size: 50,
+                        Icons.access_alarm,
+                        size: 20,
                       ),
                     ),
                     buildText(text: 'Người gửi : ${widget.sender}'),

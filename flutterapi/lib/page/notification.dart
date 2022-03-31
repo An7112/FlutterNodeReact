@@ -11,13 +11,13 @@ class NotificationPage extends StatefulWidget {
 
 class _NotificationPageState extends State<NotificationPage> {
   DataService dataService = DataService();
-  String appname = 'Node_Flutter';
+  String pagename = 'Thông báo';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(appname),
+          title: Text(pagename),
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -40,7 +40,7 @@ class _NotificationPageState extends State<NotificationPage> {
 
   Widget buildAppBar() {
     return AppBar(
-      title: Text(appname),
+      title: Text(pagename),
       centerTitle: true,
       elevation: 0.0,
     );
